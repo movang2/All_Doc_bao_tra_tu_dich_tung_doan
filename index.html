@@ -1,144 +1,143 @@
 <!DOCTYPE html>
-
 <html lang="vi">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Học và Tra Từ Vựng Hàn - Việt</title>
-<style>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Học và Tra Từ Vựng Hàn - Việt</title>
+    <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 1000px;
+            max-width: 1000px; /* cite: 2 */
             margin: 20px auto;
             padding: 20px;
             text-align: center;
         }
         .section {
             margin: 20px 0;
-            padding: 20px;
+            padding: 20px; /* cite: 3 */
             border: 1px solid #ccc;
             border-radius: 5px;
         }
         textarea {
             width: 80%;
-            padding: 10px;
+            padding: 10px; /* cite: 4 */
             font-size: 16px;
             margin: 10px 0;
             border: 1px solid #ddd;
             border-radius: 4px;
         }
         button {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 10px 20px; /* cite: 5 */
+            font-size: 16px; /* cite: 6 */
             margin: 5px;
             cursor: pointer;
             background-color: #4CAF50;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 4px; /* cite: 7 */
         }
         button:hover {
-            background-color: #45a049;
+            background-color: #45a049; /* cite: 8 */
         }
         .delete-word, .delete-article {
-            background-color: #ff4444;
-            padding: 5px 10px;
+            background-color: #ff4444; /* cite: 9 */
+            padding: 5px 10px; /* cite: 9 */
             margin-left: 10px;
             font-size: 14px;
         }
         .delete-word:hover, .delete-article:hover {
-            background-color: #cc0000;
+            background-color: #cc0000; /* cite: 10 */
         }
         .output {
-            margin-top: 20px;
-            white-space: pre-line;
+            margin-top: 20px; /* cite: 10 */
+            white-space: pre-line; /* cite: 11 */
             text-align: left;
         }
         .pair {
-            margin-bottom: 15px;
-            padding: 10px;
+            margin-bottom: 15px; /* cite: 11 */
+            padding: 10px; /* cite: 12 */
             background: #f5f5f5;
             border-radius: 5px;
             display: flex;
-            align-items: flex-start;
+            align-items: flex-start; /* cite: 12 */
         }
         .pair.highlight {
-            background: #d4edda;
-            border: 2px solid #4CAF50;
+            background: #d4edda; /* cite: 13 */
+            border: 2px solid #4CAF50; /* cite: 14 */
         }
         .speaker-icon {
-            margin-right: 10px;
-            font-size: 20px;
+            margin-right: 10px; /* cite: 14 */
+            font-size: 20px; /* cite: 15 */
             cursor: pointer;
             color: #4CAF50;
         }
         .speaker-icon:hover {
-            color: #45a049;
+            color: #45a049; /* cite: 16 */
         }
         .hidden {
-            display: none;
+            display: none; /* cite: 16 */
         }
         .kr {
-            color: blue;
-            font-weight: bold;
+            color: blue; /* cite: 17 */
+            font-weight: bold; /* cite: 18 */
         }
         .vi {
-            color: green;
-            font-weight: bold;
+            color: green; /* cite: 18 */
+            font-weight: bold; /* cite: 19 */
         }
         .word {
-            cursor: pointer;
-            padding: 2px 5px;
+            cursor: pointer; /* cite: 19 */
+            padding: 2px 5px; /* cite: 20 */
             border-radius: 3px;
         }
         .word:hover {
-            background-color: #f0f0f0;
-            text-decoration: underline;
+            background-color: #f0f0f0; /* cite: 20 */
+            text-decoration: underline; /* cite: 21 */
         }
         #lookupList {
-            border: 1px solid #ccc;
-            padding: 10px;
+            border: 1px solid #ccc; /* cite: 21 */
+            padding: 10px; /* cite: 22 */
             min-height: 100px;
             white-space: pre-wrap;
             word-wrap: break-word;
             text-align: left;
-            margin-top: 20px;
+            margin-top: 20px; /* cite: 22 */
         }
         .lookup-item {
-            margin: 5px 0;
-            display: flex;
+            margin: 5px 0; /* cite: 23 */
+            display: flex; /* cite: 24 */
             align-items: center;
         }
         .lookup-item span {
-            margin-right: 10px;
+            margin-right: 10px; /* cite: 25 */
         }
         .lookup-item input {
-            flex-grow: 1;
-            padding: 5px;
+            flex-grow: 1; /* cite: 25 */
+            padding: 5px; /* cite: 26 */
             border: 1px solid #ddd;
             border-radius: 4px;
         }
         .slider-container {
-            margin: 10px 0;
+            margin: 10px 0; /* cite: 27 */
         }
         .slider-container label {
-            display: block;
+            display: block; /* cite: 28 */
             margin-bottom: 5px;
         }
         .slider-container input[type="range"] {
-            width: 80%;
+            width: 80%; /* cite: 29 */
         }
         .slider-value {
-            font-size: 14px;
-            color: #666;
+            font-size: 14px; /* cite: 29 */
+            color: #666; /* cite: 30 */
         }
         #articleList {
-            margin-top: 30px;
-            text-align: left;
+            margin-top: 30px; /* cite: 31 */
+            text-align: left; /* cite: 31 */
         }
         .article-item {
-            display: inline-block;
-            padding: 10px;
+            display: inline-block; /* cite: 31 */
+            padding: 10px; /* cite: 32 */
             margin: 5px;
             background: #f0f8ff;
             border-left: 4px solid #4CAF50;
@@ -147,577 +146,630 @@
             max-width: 200px;
             white-space: nowrap;
             overflow: hidden;
-            text-overflow: ellipsis;
+            text-overflow: ellipsis; /* cite: 33 */
         }
         .article-item:hover {
-            background: #e0f0ff;
+            background: #e0f0ff; /* cite: 34 */
         }
         .active-article {
-            background: #d4edda;
+            background: #d4edda; /* cite: 35 */
         }
     </style>
 </head>
 <body>
-<!-- Phần 1: Xử lý văn bản song ngữ & TTS -->
 <div class="section">
 
-<!-- Thêm phần dịch từng đoạn -->
-<div style="margin: 20px 0; padding: 15px; background: #f5f5f5; border-radius: 5px;">
-<h3>Dịch Từng Đoạn</h3>
-<label for="lang">Mã ngôn ngữ nguồn (ví dụ: ko, en, ja...):</label>
-<input id="lang" style="width: 80px; margin-bottom:10px;" value="ko"/><br/>
-<label for="delay">Thời gian chờ giữa mỗi đoạn (ms):</label>
-<input id="delay" style="width: 100px;" type="number" value="1000"/><br/>
-<textarea id="inputText" placeholder="Nhập hoặc dán văn bản tại đây..." style="width: 80%; height: 100px;"></textarea>
-<br/>
-<button onclick="startTranslation()">Dịch từng đoạn</button>
-<button onclick="pauseTranslation()">⏸️ Tạm dừng</button>
-<button onclick="resumeTranslation()">▶️ Tiếp tục</button>
-<button onclick="saveTranslationAsTxt()">💾 Lưu TXT</button>
-<div id="translationResult" style="margin-top: 15px;"></div>
+    <div style="margin: 20px 0; padding: 15px; background: #f5f5f5; border-radius: 5px;">
+        <h3>Dịch Từng Đoạn</h3>
+        <label for="lang">Mã ngôn ngữ nguồn (ví dụ: ko, en, ja...):</label>
+        <input id="lang" style="width: 80px; margin-bottom:10px;" value="ko"/><br/> <label for="delay">Thời gian chờ giữa mỗi đoạn (ms):</label>
+        <input id="delay" style="width: 100px;" type="number" value="1000"/><br/> <textarea id="inputText" placeholder="Nhập hoặc dán văn bản tại đây..." style="width: 80%; height: 100px;"></textarea>
+        <br/>
+        <button onclick="startTranslation()">Dịch từng đoạn</button>
+        <button onclick="pauseTranslation()">⏸️ Tạm dừng</button>
+        <button onclick="resumeTranslation()">▶️ Tiếp tục</button>
+        <button onclick="saveTranslationAsTxt()">💾 Lưu TXT</button>
+        <button onclick="restoreFromTxt()">🔄 Khôi phục từ TXT</button>
+        <input id="txtFileInput" type="file" accept=".txt" style="display: none;" onchange="handleTxtFileUpload(event)"/>
+        <div id="translationResult" style="margin-top: 15px;"></div>
+    </div>
+    <h2>Xử lý Văn Bản Song Ngữ &amp; TTS</h2> <label for="articleTitle">Tiêu đề bài báo:</label><br/>
+    <input id="articleTitle" placeholder="Nhập tiêu đề (tùy chọn)" style="width: 80%; padding: 10px; margin-bottom: 10px;" type="text"/><br/> <label for="koreanText">Tiếng Hàn:</label><br/>
+    <textarea id="koreanText" placeholder="Nhập văn bản tiếng Hàn..."></textarea><br/>
+    <label for="vietnameseText">Tiếng Việt:</label><br/>
+    <textarea id="vietnameseText" placeholder="Nhập bản dịch tiếng Việt..."></textarea><br/>
+    <div class="slider-container">
+        <label for="speechRate">Tốc độ nói (0.1 - 2): <span class="slider-value" id="speechRateValue">1</span></label>
+        <input id="speechRate" max="2" min="0.1" oninput="updateSliderValue('speechRate', 'speechRateValue')" step="0.1" type="range" value="1"/>
+    </div>
+    <div class="slider-container">
+        <label for="pauseTime">Thời gian nghỉ (ms): <span class="slider-value" id="pauseTimeValue">1000</span></label>
+        <input id="pauseTime" max="5000" min="0" oninput="updateSliderValue('pauseTime', 'pauseTimeValue')" step="100" type="range" value="1000"/>
+    </div>
+    <button onclick="processText()">Tạo Văn Bản Song Ngữ</button>
+    <button id="speakButton" onclick="speakText()">🔊 Đọc Văn Bản</button>
+    <button class="hidden" id="pauseButton" onclick="pauseText()">⏸ Tạm dừng</button>
+    <button class="hidden" id="resumeButton" onclick="resumeText()">▶ Tiếp tục</button>
+    <button onclick="saveCurrentArticle()">💾 Lưu bài báo</button>
+    <button onclick="exportVocabulary()">📤 Xuất từ vựng</button>
+    <div class="output" id="output"></div>
+    <h3>Danh sách từ đã tra</h3>
+    <div id="lookupList"></div>
 </div>
-<h2>Xử lý Văn Bản Song Ngữ &amp; TTS</h2>
-<label for="articleTitle">Tiêu đề bài báo:</label><br/>
-<input id="articleTitle" placeholder="Nhập tiêu đề (tùy chọn)" style="width: 80%; padding: 10px; margin-bottom: 10px;" type="text"/><br/>
-<label for="koreanText">Tiếng Hàn:</label><br/>
-<textarea id="koreanText" placeholder="Nhập văn bản tiếng Hàn..."></textarea><br/>
-<label for="vietnameseText">Tiếng Việt:</label><br/>
-<textarea id="vietnameseText" placeholder="Nhập bản dịch tiếng Việt..."></textarea><br/>
-<div class="slider-container">
-<label for="speechRate">Tốc độ nói (0.1 - 2): <span class="slider-value" id="speechRateValue">1</span></label>
-<input id="speechRate" max="2" min="0.1" oninput="updateSliderValue('speechRate', 'speechRateValue')" step="0.1" type="range" value="1"/>
-</div>
-<div class="slider-container">
-<label for="pauseTime">Thời gian nghỉ (ms): <span class="slider-value" id="pauseTimeValue">1000</span></label>
-<input id="pauseTime" max="5000" min="0" oninput="updateSliderValue('pauseTime', 'pauseTimeValue')" step="100" type="range" value="1000"/>
-</div>
-<button onclick="processText()">Tạo Văn Bản Song Ngữ</button>
-<button id="speakButton" onclick="speakText()">🔊 Đọc Văn Bản</button>
-<button class="hidden" id="pauseButton" onclick="pauseText()">⏸ Tạm dừng</button>
-<button class="hidden" id="resumeButton" onclick="resumeText()">▶ Tiếp tục</button>
-<button onclick="saveCurrentArticle()">💾 Lưu bài báo</button>
-<button onclick="exportVocabulary()">📤 Xuất từ vựng</button>
-<div class="output" id="output"></div>
-<h3>Danh sách từ đã tra</h3>
-<div id="lookupList"></div>
-</div>
-<!-- Phần danh sách bài báo -->
 <div class="section">
-<h2>Danh sách bài báo</h2>
-<div id="articleList"></div>
+    <h2>Danh sách bài báo</h2>
+    <div id="articleList"></div>
 </div>
-<!-- Phần lưu và khôi phục -->
 <div class="section">
-<h2>Lưu và Khôi phục</h2>
-<button onclick="saveState()">💾 Lưu trạng thái</button>
-<input accept=".json" id="loadFile" onchange="loadState(event)" type="file"/>
-<label for="loadFile">Chọn file để khôi phục</label>
+    <h2>Lưu và Khôi phục</h2>
+    <button onclick="saveState()">💾 Lưu trạng thái</button>
+    <input accept=".json" id="loadFile" onchange="loadState(event)" type="file"/>
+    <label for="loadFile">Chọn file để khôi phục</label>
 </div>
 <script>
-        // --- Biến toàn cục ---
-        let lookedUpWords = new Map();
-        let articles = JSON.parse(localStorage.getItem('koreanArticles')) || [];
-        let currentArticleId = null;
-        let isSpeaking = false;
-        let isPaused = false;
-        let currentUtterance = null;
-        let currentIndex = 0;
-        let elements = [];
+    // --- Biến toàn cục ---
+    let lookedUpWords = new Map(); /* cite: 41 */
+    let articles = JSON.parse(localStorage.getItem('koreanArticles')) || []; /* cite: 41 */
+    let currentArticleId = null;
+    let isSpeaking = false;
+    let isPaused = false; /* cite: 42 */
+    let currentUtterance = null; /* cite: 42 */
+    let currentIndex = 0;
+    let elements = []; /* cite: 43 */
+    // --- Khởi tạo ---
+    document.addEventListener('DOMContentLoaded', function() {
+        renderArticleList();
+    }); /* cite: 44 */
+    // --- Chức năng 1: Xử lý văn bản song ngữ & TTS ---
+    function processText() {
+        let koreanLines = document.getElementById("koreanText").value.trim().split("\n"); /* cite: 45 */
+        let vietnameseLines = document.getElementById("vietnameseText").value.trim().split("\n"); /* cite: 45 */
+        let outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = "";
 
-        // --- Khởi tạo ---
-        document.addEventListener('DOMContentLoaded', function() {
-            renderArticleList();
-        });
+        let maxLines = Math.max(koreanLines.length, vietnameseLines.length); /* cite: 46 */
+        for (let i = 0; i < maxLines; i++) {
+            let kr = koreanLines[i] ? koreanLines[i].trim() : ""; /* cite: 47 */
+            let vi = vietnameseLines[i] ? vietnameseLines[i].trim() : "";
 
-        // --- Chức năng 1: Xử lý văn bản song ngữ & TTS ---
-        function processText() {
-            let koreanLines = document.getElementById("koreanText").value.trim().split("\n");
-            let vietnameseLines = document.getElementById("vietnameseText").value.trim().split("\n");
-            let outputDiv = document.getElementById("output");
-            outputDiv.innerHTML = "";
+            let pairDiv = document.createElement("div");
+            pairDiv.className = "pair"; /* cite: 48 */
+            pairDiv.dataset.index = i; /* cite: 48 */
 
-            let maxLines = Math.max(koreanLines.length, vietnameseLines.length);
+            // Thêm biểu tượng loa
+            let speakerIcon = document.createElement("span"); /* cite: 49 */
+            speakerIcon.className = "speaker-icon"; /* cite: 49 */
+            speakerIcon.innerText = "🔊";
+            speakerIcon.onclick = () => startFromPair(i); /* cite: 50 */
+            // Sự kiện TTS cho biểu tượng loa
+            pairDiv.appendChild(speakerIcon); /* cite: 51 */
+            // Container cho nội dung câu
+            let contentDiv = document.createElement("div"); /* cite: 52 */
+            contentDiv.className = "pair-content";
 
-            for (let i = 0; i < maxLines; i++) {
-                let kr = koreanLines[i] ? koreanLines[i].trim() : "";
-                let vi = vietnameseLines[i] ? vietnameseLines[i].trim() : "";
-                
-                let pairDiv = document.createElement("div");
-                pairDiv.className = "pair";
-                pairDiv.dataset.index = i;
-                
-                // Thêm biểu tượng loa
-                let speakerIcon = document.createElement("span");
-                speakerIcon.className = "speaker-icon";
-                speakerIcon.innerText = "🔊";
-                speakerIcon.onclick = () => startFromPair(i); // Sự kiện TTS cho biểu tượng loa
-                pairDiv.appendChild(speakerIcon);
-
-                // Container cho nội dung câu
-                let contentDiv = document.createElement("div");
-                contentDiv.className = "pair-content";
-
-                if (kr) {
-                    let krSpan = document.createElement("span");
-                    krSpan.className = "kr";
-                    krSpan.innerHTML = kr.split(/(\s+)/).map(part => {
-                        if (part.trim() === "") return part;
-                        return `<span class="word" onclick="lookupWord(event, '${encodeURIComponent(part)}')">${part}</span>`;
-                    }).join("");
-                    contentDiv.appendChild(krSpan);
-                    contentDiv.appendChild(document.createElement("br"));
-                }
-                
-                if (vi) {
-                    let viSpan = document.createElement("span");
-                    viSpan.className = "vi";
-                    viSpan.innerText = vi;
-                    contentDiv.appendChild(viSpan);
-                }
-
-                pairDiv.appendChild(contentDiv);
-                outputDiv.appendChild(pairDiv);
+            if (kr) {
+                let krSpan = document.createElement("span"); /* cite: 53 */
+                krSpan.className = "kr"; /* cite: 53 */
+                krSpan.innerHTML = kr.split(/(\s+)/).map(part => {
+                    if (part.trim() === "") return part;
+                    return `<span class="word" onclick="lookupWord(event, '${encodeURIComponent(part)}')">${part}</span>`;
+                }).join(""); /* cite: 54 */
+                contentDiv.appendChild(krSpan);
+                contentDiv.appendChild(document.createElement("br"));
             }
+
+            if (vi) {
+                let viSpan = document.createElement("span"); /* cite: 55 */
+                viSpan.className = "vi"; /* cite: 55 */
+                viSpan.innerText = vi;
+                contentDiv.appendChild(viSpan);
+            }
+
+            pairDiv.appendChild(contentDiv); /* cite: 56 */
+            outputDiv.appendChild(pairDiv);
+        }
+    }
+
+    function speakText() {
+        startFromPair(0); /* cite: 57 */
+        // Bắt đầu từ đầu khi nhấn nút "Đọc Văn Bản"
+    }
+
+    function startFromPair(index) {
+        if (isSpeaking) {
+            stopSpeaking(); /* cite: 58 */
+            // Dừng phát âm hiện tại nếu đang phát
+        }
+        isSpeaking = true; /* cite: 59 */
+        isPaused = false; /* cite: 59 */
+        currentIndex = index; // Bắt đầu từ chỉ số được chọn
+        elements = document.getElementById("output").getElementsByClassName("pair"); /* cite: 60 */
+        document.getElementById("speakButton").classList.add("hidden");
+        document.getElementById("pauseButton").classList.remove("hidden");
+        document.getElementById("resumeButton").classList.add("hidden");
+        speechSynthesis.cancel(); // Hủy các utterance cũ
+        speakNext(currentIndex); /* cite: 61 */
+    }
+
+    function speakNext(index) {
+        if (index >= elements.length || !isSpeaking) {
+            stopSpeaking(); /* cite: 62 */
+            return;
         }
 
-        function speakText() {
-            startFromPair(0); // Bắt đầu từ đầu khi nhấn nút "Đọc Văn Bản"
+        // Xóa highlight cũ
+        document.querySelectorAll('.pair').forEach(pair => pair.classList.remove('highlight')); /* cite: 63 */
+        // Highlight câu hiện tại
+        elements[index].classList.add('highlight'); /* cite: 64 */
+        let krText = elements[index].getElementsByClassName("kr")[0]?.innerText || "";
+        let viText = elements[index].getElementsByClassName("vi")[0]?.innerText || "";
+        const speechRate = parseFloat(document.getElementById("speechRate").value);
+        const pauseTime = parseInt(document.getElementById("pauseTime").value); /* cite: 65 */
+        function speak(text, lang, callback) {
+            currentUtterance = new SpeechSynthesisUtterance(text); /* cite: 66 */
+            currentUtterance.lang = lang; /* cite: 66 */
+            currentUtterance.rate = speechRate;
+            currentUtterance.onend = callback;
+            speechSynthesis.speak(currentUtterance); /* cite: 67 */
         }
 
-        function startFromPair(index) {
-            if (isSpeaking) {
-                stopSpeaking(); // Dừng phát âm hiện tại nếu đang phát
-            }
-            isSpeaking = true;
-            isPaused = false;
-            currentIndex = index; // Bắt đầu từ chỉ số được chọn
-            elements = document.getElementById("output").getElementsByClassName("pair");
-            document.getElementById("speakButton").classList.add("hidden");
+        if (krText) {
+            speak(krText, "ko-KR", () => {
+                if (isPaused || !isSpeaking) return;
+                if (viText) {
+
+                    setTimeout(() => { /* cite: 68 */
+                        speak(viText, "vi-VN", () => speakNext(index + 1));
+                    }, pauseTime);
+                } else {
+
+                    speakNext(index + 1); /* cite: 69 */
+                }
+            }); /* cite: 70 */
+        } else if (viText) {
+            speak(viText, "vi-VN", () => speakNext(index + 1)); /* cite: 71 */
+        } else {
+            speakNext(index + 1); /* cite: 72 */
+        }
+    }
+
+    function pauseText() {
+        if (isSpeaking && !isPaused) {
+            isPaused = true; /* cite: 73 */
+            speechSynthesis.pause(); /* cite: 73 */
+            document.getElementById("pauseButton").classList.add("hidden");
+            document.getElementById("resumeButton").classList.remove("hidden");
+        }
+    }
+
+    function resumeText() {
+        if (isSpeaking && isPaused) {
+            isPaused = false; /* cite: 74 */
+            speechSynthesis.resume(); /* cite: 74 */
             document.getElementById("pauseButton").classList.remove("hidden");
             document.getElementById("resumeButton").classList.add("hidden");
-            speechSynthesis.cancel(); // Hủy các utterance cũ
-            speakNext(currentIndex);
         }
+    }
 
-        function speakNext(index) {
-            if (index >= elements.length || !isSpeaking) {
-                stopSpeaking();
-                return;
-            }
+    function stopSpeaking() {
+        isSpeaking = false; /* cite: 75 */
+        isPaused = false; /* cite: 75 */
+        currentUtterance = null;
+        currentIndex = 0;
+        speechSynthesis.cancel();
+        document.getElementById("speakButton").classList.remove("hidden");
+        document.getElementById("pauseButton").classList.add("hidden");
+        document.getElementById("resumeButton").classList.add("hidden");
+        document.querySelectorAll('.pair').forEach(pair => pair.classList.remove('highlight')); /* cite: 76 */
+    }
 
-            // Xóa highlight cũ
-            document.querySelectorAll('.pair').forEach(pair => pair.classList.remove('highlight'));
-            // Highlight câu hiện tại
-            elements[index].classList.add('highlight');
+    // Cập nhật giá trị hiển thị của thanh trượt
+    function updateSliderValue(sliderId, valueId) {
+        document.getElementById(valueId).textContent = document.getElementById(sliderId).value; /* cite: 77 */
+    }
 
-            let krText = elements[index].getElementsByClassName("kr")[0]?.innerText || "";
-            let viText = elements[index].getElementsByClassName("vi")[0]?.innerText || "";
-            const speechRate = parseFloat(document.getElementById("speechRate").value);
-            const pauseTime = parseInt(document.getElementById("pauseTime").value);
-
-            function speak(text, lang, callback) {
-                currentUtterance = new SpeechSynthesisUtterance(text);
-                currentUtterance.lang = lang;
-                currentUtterance.rate = speechRate;
-                currentUtterance.onend = callback;
-                speechSynthesis.speak(currentUtterance);
-            }
-
-            if (krText) {
-                speak(krText, "ko-KR", () => {
-                    if (isPaused || !isSpeaking) return;
-                    if (viText) {
-                        setTimeout(() => {
-                            speak(viText, "vi-VN", () => speakNext(index + 1));
-                        }, pauseTime);
-                    } else {
-                        speakNext(index + 1);
-                    }
-                });
-            } else if (viText) {
-                speak(viText, "vi-VN", () => speakNext(index + 1));
-            } else {
-                speakNext(index + 1);
-            }
+    // --- Chức năng tra từ điển ---
+    function lookupWord(event, word) {
+        event.stopPropagation(); /* cite: 78 */
+        // Ngăn sự kiện nhấp chuột lan truyền
+        const decodedWord = decodeURIComponent(word); /* cite: 79 */
+        const url = `https://korean.dict.naver.com/kovidict/#/search?query=${word}`;
+        window.open(url, '_blank');
+        if (!lookedUpWords.has(decodedWord)) {
+            lookedUpWords.set(decodedWord, ""); /* cite: 80 */
         }
+        updateLookupList(); /* cite: 81 */
+    }
 
-        function pauseText() {
-            if (isSpeaking && !isPaused) {
-                isPaused = true;
-                speechSynthesis.pause();
-                document.getElementById("pauseButton").classList.add("hidden");
-                document.getElementById("resumeButton").classList.remove("hidden");
-            }
-        }
-
-        function resumeText() {
-            if (isSpeaking && isPaused) {
-                isPaused = false;
-                speechSynthesis.resume();
-                document.getElementById("pauseButton").classList.remove("hidden");
-                document.getElementById("resumeButton").classList.add("hidden");
-            }
-        }
-
-        function stopSpeaking() {
-            isSpeaking = false;
-            isPaused = false;
-            currentUtterance = null;
-            currentIndex = 0;
-            speechSynthesis.cancel();
-            document.getElementById("speakButton").classList.remove("hidden");
-            document.getElementById("pauseButton").classList.add("hidden");
-            document.getElementById("resumeButton").classList.add("hidden");
-            document.querySelectorAll('.pair').forEach(pair => pair.classList.remove('highlight'));
-        }
-
-        // Cập nhật giá trị hiển thị của thanh trượt
-        function updateSliderValue(sliderId, valueId) {
-            document.getElementById(valueId).textContent = document.getElementById(sliderId).value;
-        }
-
-        // --- Chức năng tra từ điển ---
-        function lookupWord(event, word) {
-            event.stopPropagation(); // Ngăn sự kiện nhấp chuột lan truyền
-            const decodedWord = decodeURIComponent(word);
-            const url = `https://korean.dict.naver.com/kovidict/#/search?query=${word}`;
-            window.open(url, '_blank');
-            if (!lookedUpWords.has(decodedWord)) {
-                lookedUpWords.set(decodedWord, "");
-            }
-            updateLookupList();
-        }
-
-        function updateLookupList() {
-            const lookupList = document.getElementById('lookupList');
-            lookupList.innerHTML = Array.from(lookedUpWords.entries())
-                .map(([word, meaning]) => `
+    function updateLookupList() {
+        const lookupList = document.getElementById('lookupList'); /* cite: 82 */
+        lookupList.innerHTML = Array.from(lookedUpWords.entries())
+            .map(([word, meaning]) => `
                     <div class="lookup-item">
                         <span>${word}</span>
                         <input type="text" value="${meaning}" placeholder="Ghi nghĩa..." oninput="updateMeaning('${word}', this.value)">
+    
                         <button class="delete-word" onclick="deleteWord('${encodeURIComponent(word)}')">Xóa</button>
                     </div>
-                `).join('');
-        }
+                `).join(''); /* cite: 84 */
+    }
 
-        function updateMeaning(word, meaning) {
-            lookedUpWords.set(word, meaning);
-        }
+    function updateMeaning(word, meaning) {
+        lookedUpWords.set(word, meaning); /* cite: 85 */
+    }
 
-        function deleteWord(encodedWord) {
-            const word = decodeURIComponent(encodedWord);
-            lookedUpWords.delete(word);
-            updateLookupList();
-        }
+    function deleteWord(encodedWord) {
+        const word = decodeURIComponent(encodedWord); /* cite: 86 */
+        lookedUpWords.delete(word); /* cite: 86 */
+        updateLookupList();
+    }
 
-        // --- Chức năng xuất từ vựng ---
-        function exportVocabulary() {
-            const choice = prompt("Nhập 'current' để xuất từ vựng của bài báo hiện tại, hoặc 'all' để xuất toàn bộ từ vựng:");
-            if (!choice) return;
+    // --- Chức năng xuất từ vựng ---
+    function exportVocabulary() {
+        const choice = prompt("Nhập 'current' để xuất từ vựng của bài báo hiện tại, hoặc 'all' để xuất toàn bộ từ vựng:"); /* cite: 87 */
+        if (!choice) return;
 
-            let wordsToExport = [];
-            if (choice.toLowerCase() === 'current' && currentArticleId) {
-                const article = articles.find(a => a.id === currentArticleId);
-                if (article && article.words) {
-                    wordsToExport = article.words;
+        let wordsToExport = [];
+        if (choice.toLowerCase() === 'current' && currentArticleId) {
+            const article = articles.find(a => a.id === currentArticleId); /* cite: 88 */
+            if (article && article.words) {
+                wordsToExport = article.words; /* cite: 89 */
+            }
+        } else if (choice.toLowerCase() === 'all') {
+            const allWords = new Map(); /* cite: 90 */
+            articles.forEach(article => {
+                if (article.words) {
+                    article.words.forEach(([word, meaning]) => {
+                        if (!allWords.has(word)) {
+
+                            allWords.set(word, meaning); /* cite: 91 */
+                        }
+                    });
                 }
-            } else if (choice.toLowerCase() === 'all') {
-                const allWords = new Map();
-                articles.forEach(article => {
-                    if (article.words) {
-                        article.words.forEach(([word, meaning]) => {
-                            if (!allWords.has(word)) {
-                                allWords.set(word, meaning);
-                            }
-                        });
-                    }
-                });
-                wordsToExport = Array.from(allWords.entries());
-            } else {
-                alert('Lựa chọn không hợp lệ! Vui lòng nhập "current" hoặc "all".');
-                return;
-            }
 
-            if (wordsToExport.length === 0) {
-                alert('Không có từ vựng để xuất!');
-                return;
-            }
-
-            // Xuất dưới dạng CSV
-            let csvContent = "Từ vựng,Nghĩa\n";
-            wordsToExport.forEach(([word, meaning]) => {
-                csvContent += `"${word.replace(/"/g, '""')}","${meaning.replace(/"/g, '""')}"\n`;
-            });
-
-            const now = new Date();
-            const timestamp = now.toISOString().replace(/[:.]/g, '-');
-            const fileName = `vocabulary_${timestamp}.csv`;
-
-            const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = fileName;
-            a.click();
-            URL.revokeObjectURL(url);
+            }); /* cite: 92 */
+            wordsToExport = Array.from(allWords.entries());
+        } else {
+            alert('Lựa chọn không hợp lệ! Vui lòng nhập "current" hoặc "all".'); /* cite: 93 */
+            return;
         }
 
-        // --- Chức năng quản lý bài báo ---
-        function saveCurrentArticle() {
-            const title = document.getElementById('articleTitle').value.trim() || `Bài báo ${articles.length + 1}`;
-            const koreanText = document.getElementById('koreanText').value;
-            const vietnameseText = document.getElementById('vietnameseText').value;
-            const speechRate = document.getElementById('speechRate').value;
-            const pauseTime = document.getElementById('pauseTime').value;
-            
-            if (!koreanText || !vietnameseText) {
-                alert('Vui lòng nhập cả văn bản tiếng Hàn và bản dịch tiếng Việt!');
-                return;
-            }
-
-            const article = {
-                id: Date.now().toString(),
-                title: title,
-                displayNumber: articles.length + 1,
-                koreanText: koreanText,
-                vietnameseText: vietnameseText,
-                speechRate: speechRate,
-                pauseTime: pauseTime,
-                words: Array.from(lookedUpWords.entries()),
-                createdAt: new Date().toISOString()
-            };
-
-            articles.push(article);
-            currentArticleId = article.id;
-            saveArticlesToLocalStorage();
-            renderArticleList();
-            loadArticle(article.id);
-            alert('Đã lưu bài báo!');
+        if (wordsToExport.length === 0) {
+            alert('Không có từ vựng để xuất!'); /* cite: 94 */
+            return;
         }
 
-        function deleteArticle(articleId) {
-            articles = articles.filter(a => a.id !== articleId);
-            // Cập nhật lại displayNumber
-            articles.forEach((article, index) => {
-                article.displayNumber = index + 1;
-            });
-            saveArticlesToLocalStorage();
-            renderArticleList();
-            if (articleId === currentArticleId) {
-                currentArticleId = null;
-                document.getElementById('articleTitle').value = '';
-                document.getElementById('koreanText').value = '';
-                document.getElementById('vietnameseText').value = '';
-                document.getElementById('speechRate').value = 1;
-                document.getElementById('pauseTime').value = 1000;
-                updateSliderValue('speechRate', 'speechRateValue');
-                updateSliderValue('pauseTime', 'pauseTimeValue');
-                document.getElementById('output').innerHTML = '';
-                lookedUpWords = new Map();
-                updateLookupList();
-            }
+        // Xuất dưới dạng CSV
+        let csvContent = "Từ vựng,Nghĩa\n"; /* cite: 95 */
+        wordsToExport.forEach(([word, meaning]) => {
+            csvContent += `"${word.replace(/"/g, '""')}","${meaning.replace(/"/g, '""')}"\n`;
+        }); /* cite: 96 */
+        const now = new Date();
+        const timestamp = now.toISOString().replace(/[:.]/g, '-');
+        const fileName = `vocabulary_${timestamp}.csv`; /* cite: 97 */
+        const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" }); /* cite: 97 */
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url; /* cite: 98 */
+        a.download = fileName; /* cite: 98 */
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+    // --- Chức năng quản lý bài báo ---
+    function saveCurrentArticle() {
+        const title = document.getElementById('articleTitle').value.trim() || `Bài báo ${articles.length + 1}`; /* cite: 99 */
+        const koreanText = document.getElementById('koreanText').value;
+        const vietnameseText = document.getElementById('vietnameseText').value;
+        const speechRate = document.getElementById('speechRate').value; /* cite: 100 */
+        const pauseTime = document.getElementById('pauseTime').value; /* cite: 100 */
+
+        if (!koreanText || !vietnameseText) {
+            alert('Vui lòng nhập cả văn bản tiếng Hàn và bản dịch tiếng Việt!'); /* cite: 101 */
+            return;
         }
 
-        function loadArticle(articleId) {
-            const article = articles.find(a => a.id === articleId);
-            if (!article) return;
+        const article = {
+            id: Date.now().toString(),
+            title: title,
+            displayNumber: articles.length + 1,
+            koreanText: koreanText,
 
-            currentArticleId = articleId;
-            document.getElementById('articleTitle').value = article.title;
-            document.getElementById('koreanText').value = article.koreanText;
-            document.getElementById('vietnameseText').value = article.vietnameseText;
-            document.getElementById('speechRate').value = article.speechRate;
-            document.getElementById('pauseTime').value = article.pauseTime;
+            vietnameseText: vietnameseText, /* cite: 102 */
+            speechRate: speechRate,
+            pauseTime: pauseTime,
+            words: Array.from(lookedUpWords.entries()),
+            createdAt: new Date().toISOString()
+        };
+        articles.push(article); /* cite: 103 */
+        currentArticleId = article.id;
+        saveArticlesToLocalStorage();
+        renderArticleList();
+        loadArticle(article.id);
+        alert('Đã lưu bài báo!'); /* cite: 104 */
+    }
+
+    function deleteArticle(articleId) {
+        articles = articles.filter(a => a.id !== articleId); /* cite: 105 */
+        // Cập nhật lại displayNumber
+        articles.forEach((article, index) => {
+            article.displayNumber = index + 1;
+        }); /* cite: 106 */
+        saveArticlesToLocalStorage();
+        renderArticleList();
+        if (articleId === currentArticleId) {
+            currentArticleId = null; /* cite: 107 */
+            document.getElementById('articleTitle').value = '';
+            document.getElementById('koreanText').value = '';
+            document.getElementById('vietnameseText').value = '';
+            document.getElementById('speechRate').value = 1;
+            document.getElementById('pauseTime').value = 1000;
             updateSliderValue('speechRate', 'speechRateValue');
-            updateSliderValue('pauseTime', 'pauseTimeValue');
-
-            // Cập nhật từ đã tra
-            lookedUpWords = new Map(article.words || []);
+            updateSliderValue('pauseTime', 'pauseTimeValue'); /* cite: 108 */
+            document.getElementById('output').innerHTML = ''; /* cite: 108 */
+            lookedUpWords = new Map();
             updateLookupList();
-
-            // Xử lý hiển thị văn bản song ngữ
-            processText();
-
-            // Cập nhật giao diện danh sách bài báo
-            document.querySelectorAll('.article-item').forEach(item => {
-                item.classList.remove('active-article');
-                if (item.dataset.id === articleId) {
-                    item.classList.add('active-article');
-                }
-            });
         }
+    }
 
-        function renderArticleList() {
-            const articleListContainer = document.getElementById('articleList');
-            if (articles.length === 0) {
-                articleListContainer.innerHTML = '<p>Chưa có bài báo nào được lưu</p>';
-                return;
+    function loadArticle(articleId) {
+        const article = articles.find(a => a.id === articleId); /* cite: 109 */
+        if (!article) return;
+
+        currentArticleId = articleId;
+        document.getElementById('articleTitle').value = article.title;
+        document.getElementById('koreanText').value = article.koreanText;
+        document.getElementById('vietnameseText').value = article.vietnameseText;
+        document.getElementById('speechRate').value = article.speechRate; /* cite: 110 */
+        document.getElementById('pauseTime').value = article.pauseTime; /* cite: 110 */
+        updateSliderValue('speechRate', 'speechRateValue');
+        updateSliderValue('pauseTime', 'pauseTimeValue');
+
+        // Cập nhật từ đã tra
+        lookedUpWords = new Map(article.words || []); /* cite: 111 */
+        updateLookupList();
+
+        // Xử lý hiển thị văn bản song ngữ
+        processText(); /* cite: 112 */
+        // Cập nhật giao diện danh sách bài báo
+        document.querySelectorAll('.article-item').forEach(item => {
+            item.classList.remove('active-article');
+            if (item.dataset.id === articleId) {
+                item.classList.add('active-article');
             }
 
-            articleListContainer.innerHTML = articles.map(article => `
+        }); /* cite: 113 */
+    }
+
+    function renderArticleList() {
+        const articleListContainer = document.getElementById('articleList'); /* cite: 114 */
+        if (articles.length === 0) {
+            articleListContainer.innerHTML = '<p>Chưa có bài báo nào được lưu</p>'; /* cite: 115 */
+            return;
+        }
+
+        articleListContainer.innerHTML = articles.map(article => `
                 <div class="article-item ${article.id === currentArticleId ? 'active-article' : ''}" 
                      data-id="${article.id}">
                     <span onclick="loadArticle('${article.id}')">${article.title}</span>
+                
                     <button class="delete-article" onclick="deleteArticle('${article.id}')">Xóa</button>
                 </div>
-            `).join('');
+            `).join(''); /* cite: 117 */
+    }
+
+    function saveArticlesToLocalStorage() {
+        try {
+            localStorage.setItem('koreanArticles', JSON.stringify(articles)); /* cite: 118 */
+        } catch (e) {
+            console.error('Lỗi khi lưu vào localStorage:', e); /* cite: 119 */
+            alert('Không thể lưu bài báo vào localStorage. Vui lòng kiểm tra dung lượng hoặc quyền truy cập.'); /* cite: 120 */
+        }
+    }
+
+    // --- Chức năng lưu và khôi phục ---
+    function saveState() {
+        const state = {
+            articles: articles,
+            currentArticleId: currentArticleId,
+            lookedUpWords: Array.from(lookedUpWords.entries()) /* cite: 121 */
+        };
+
+        const now = new Date(); /* cite: 122 */
+        const timestamp = now.toISOString().replace(/[:.]/g, '-');
+        const fileName = `korean_study_${timestamp}.json`;
+
+        const blob = new Blob([JSON.stringify(state, null, 2)], { type: "application/json" }); /* cite: 123 */
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = fileName;
+        a.click();
+        URL.revokeObjectURL(url); /* cite: 124 */
+    }
+
+    function loadState(event) {
+        const file = event.target.files[0]; /* cite: 125 */
+        if (!file) {
+            return; /* cite: 126 */
         }
 
-        function saveArticlesToLocalStorage() {
+        const reader = new FileReader(); /* cite: 127 */
+        reader.onload = function(e) {
             try {
-                localStorage.setItem('koreanArticles', JSON.stringify(articles));
-            } catch (e) {
-                console.error('Lỗi khi lưu vào localStorage:', e);
-                alert('Không thể lưu bài báo vào localStorage. Vui lòng kiểm tra dung lượng hoặc quyền truy cập.');
-            }
-        }
-
-        // --- Chức năng lưu và khôi phục ---
-        function saveState() {
-            const state = {
-                articles: articles,
-                currentArticleId: currentArticleId,
-                lookedUpWords: Array.from(lookedUpWords.entries())
-            };
-            
-            const now = new Date();
-            const timestamp = now.toISOString().replace(/[:.]/g, '-');
-            const fileName = `korean_study_${timestamp}.json`;
-
-            const blob = new Blob([JSON.stringify(state, null, 2)], { type: "application/json" });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = fileName;
-            a.click();
-            URL.revokeObjectURL(url);
-        }
-
-        function loadState(event) {
-            const file = event.target.files[0];
-            if (!file) {
-                return;
-            }
-
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const state = JSON.parse(e.target.result);
-                    
-                    // Khôi phục bài báo
-                    if (state.articles) {
-                        articles = state.articles;
-                        // Cập nhật displayNumber cho các bài báo
-                        articles.forEach((article, index) => {
-                            article.displayNumber = index + 1;
-                        });
-                        saveArticlesToLocalStorage();
-                    }
-                    
-                    // Khôi phục từ đã tra
-                    if (state.lookedUpWords) {
-                        lookedUpWords = new Map(state.lookedUpWords);
-                        updateLookupList();
-                    }
-                    
-                    // Khôi phục bài báo đang xem
-                    if (state.currentArticleId) {
-                        currentArticleId = state.currentArticleId;
-                        loadArticle(currentArticleId);
-                    }
-                    
-                    renderArticleList();
-                    alert('Đã khôi phục trạng thái thành công!');
-                } catch (e) {
-                    console.error('Lỗi khi khôi phục trạng thái:', e);
-                    alert('Không thể khôi phục trạng thái. Vui lòng kiểm tra file JSON.');
+                const state = JSON.parse(e.target.result); /* cite: 128 */
+                // Khôi phục bài báo
+                if (state.articles) {
+                    articles = state.articles; /* cite: 129 */
+                    // Cập nhật displayNumber cho các bài báo
+                    articles.forEach((article, index) => {
+                        article.displayNumber = index + 1;
+                    }); /* cite: 130 */
+                    saveArticlesToLocalStorage();
                 }
-            };
-            reader.readAsText(file);
+
+                // Khôi phục từ đã tra
+                if (state.lookedUpWords) {
+                    lookedUpWords = new Map(state.lookedUpWords); /* cite: 131 */
+                    updateLookupList();
+                }
+
+                // Khôi phục bài báo đang xem
+                if (state.currentArticleId) {
+                    currentArticleId = state.currentArticleId; /* cite: 132 */
+                    loadArticle(currentArticleId);
+                }
+
+                renderArticleList(); /* cite: 133 */
+                alert('Đã khôi phục trạng thái thành công!');
+            } catch (e) {
+                console.error('Lỗi khi khôi phục trạng thái:', e); /* cite: 134 */
+                alert('Không thể khôi phục trạng thái. Vui lòng kiểm tra file JSON.'); /* cite: 135 */
+            }
+        };
+        reader.readAsText(file); /* cite: 136 */
+    }
+
+    // --- Biến toàn cục cho phần dịch ---
+    let translationPause = false;
+    let translationLines = []; /* cite: 137 */
+    let translationIndex = 0;
+
+    // --- Chức năng dịch từng đoạn ---
+    async function fetchTranslate(text, sl, tl = 'vi') {
+        const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${sl}&tl=${tl}&dt=t&q=` + encodeURIComponent(text); /* cite: 138 */
+        try {
+            const res = await fetch(url);
+            const data = await res.json(); /* cite: 139 */
+            return data[0].map(x => x[0]).join('');
+        } catch (error) {
+            console.error('Lỗi khi dịch:', error); /* cite: 140 */
+            return "Lỗi khi dịch: " + error.message;
         }
-    
-// --- Biến toàn cục cho phần dịch ---
-let translationPause = false;
-let translationLines = [];
-let translationIndex = 0;
-
-// --- Chức năng dịch từng đoạn ---
-async function fetchTranslate(text, sl, tl = 'vi') {
-    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${sl}&tl=${tl}&dt=t&q=` + encodeURIComponent(text);
-    try {
-        const res = await fetch(url);
-        const data = await res.json();
-        return data[0].map(x => x[0]).join('');
-    } catch (error) {
-        console.error('Lỗi khi dịch:', error);
-        return "Lỗi khi dịch: " + error.message;
     }
-}
 
-async function startTranslation() {
-    translationPause = false;
-    const text = document.getElementById('inputText').value.trim();
-    const lang = document.getElementById('lang').value || 'ko';
-    const delay = parseInt(document.getElementById('delay').value || 1000);
-    translationLines = text.split(/\n+/).filter(x => x.trim());
-    translationIndex = 0;
-    document.getElementById('translationResult').innerHTML = '';
+    async function startTranslation() {
+        translationPause = false; /* cite: 141 */
+        const text = document.getElementById('inputText').value.trim();
+        const lang = document.getElementById('lang').value || 'ko';
+        const delay = parseInt(document.getElementById('delay').value || 1000); /* cite: 142 */
+        translationLines = text.split(/\n+/).filter(x => x.trim());
+        translationIndex = 0;
+        document.getElementById('translationResult').innerHTML = ''; /* cite: 143 */
+        while (translationIndex < translationLines.length) {
+            if (translationPause) break;
+            const original = translationLines[translationIndex]; /* cite: 144 */
+            const translated = await fetchTranslate(original, lang);
 
-    while (translationIndex < translationLines.length) {
-        if (translationPause) break;
-        const original = translationLines[translationIndex];
-        const translated = await fetchTranslate(original, lang);
-
-        const div = document.createElement('div');
-        div.className = 'block';
-        div.style.marginBottom = '15px';
-        div.style.paddingBottom = '10px';
-        div.style.borderBottom = '1px dashed #ccc';
-        div.innerHTML = `
+            const div = document.createElement('div');
+            div.className = 'block';
+            div.style.marginBottom = '15px';
+            div.style.paddingBottom = '10px'; /* cite: 145 */
+            div.style.borderBottom = '1px dashed #ccc'; /* cite: 145 */
+            div.innerHTML = `
             <div style="font-weight: bold; color: #333;">▶ ${original}</div>
-<div style="color: #006400; margin-top: 5px;">▶ ${translated}</div>
-        `;
+            <div style="color: #006400; margin-top: 5px;">▶ ${translated}</div>
+        `; /* cite: 146 */
+            document.getElementById('translationResult').appendChild(div);
+            translationIndex++;
 
-        document.getElementById('translationResult').appendChild(div);
-        translationIndex++;
-
-        document.getElementById('koreanText').value += (document.getElementById('koreanText').value ? '\n' : '') + original;
-        document.getElementById('vietnameseText').value += (document.getElementById('vietnameseText').value ? '\n' : '') + translated;
-
-        await new Promise(r => setTimeout(r, delay));
-    }
-}
-
-function pauseTranslation() {
-    translationPause = true;
-}
-
-function resumeTranslation() {
-    translationPause = false;
-    startTranslation();
-}
-
-function saveTranslationAsTxt() {
-    let content = "";
-    document.querySelectorAll("#translationResult .block").forEach(div => {
-        const ori = div.querySelector('div:first-child')?.innerText.replace('▶ ', '') || '';
-        const tra = div.querySelector('div:last-child')?.innerText.replace('▶ ', '') || '';
-        content += ori + "\n" + tra + "\n\n";
-    });
-
-    if (!content.trim()) {
-        alert('Không có nội dung để lưu!');
-        return;
+            document.getElementById('koreanText').value += (document.getElementById('koreanText').value ? '\n' : '') + original;
+            document.getElementById('vietnameseText').value += (document.getElementById('vietnameseText').value ? '\n' : '') + translated; /* cite: 147 */
+            await new Promise(r => setTimeout(r, delay));
+        }
     }
 
-    const blob = new Blob([content], {type: "text/plain"});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "ban_dich_song_ngu.txt";
-    a.click();
-    URL.revokeObjectURL(url);
-}
+    function pauseTranslation() {
+        translationPause = true; /* cite: 148 */
+    }
+
+    function resumeTranslation() {
+        translationPause = false;
+        startTranslation();
+    }
+
+    function saveTranslationAsTxt() {
+        let content = ""; /* cite: 149 */
+        document.querySelectorAll("#translationResult .block").forEach(div => {
+            const ori = div.querySelector('div:first-child')?.innerText.replace('▶ ', '') || '';
+            const tra = div.querySelector('div:last-child')?.innerText.replace('▶ ', '') || '';
+            content += ori + "\n" + tra + "\n\n";
+        }); /* cite: 150 */
+        if (!content.trim()) {
+            alert('Không có nội dung để lưu!');
+            return; /* cite: 151 */
+        }
+
+        const blob = new Blob([content], {type: "text/plain"});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url; /* cite: 152 */
+        a.download = "ban_dich_song_ngu.txt";
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+    // --- Chức năng khôi phục từ TXT ---
+    function restoreFromTxt() {
+        document.getElementById('txtFileInput').click();
+    }
+
+    function handleTxtFileUpload(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const content = e.target.result;
+            parseTxtContent(content);
+        };
+        reader.readAsText(file);
+    }
+
+    function parseTxtContent(content) {
+        // Xóa nội dung cũ
+        document.getElementById('koreanText').value = '';
+        document.getElementById('vietnameseText').value = '';
+
+        const lines = content.split('\n').filter(line => line.trim());
+        let koreanLines = [];
+        let vietnameseLines = [];
+
+        // Simple state to determine if the next line should be Korean or Vietnamese
+        // based on the previous line being identified as one or the other.
+        // This assumes an alternating pattern of Korean and Vietnamese lines.
+        let expectKorean = true;
+
+        for (let line of lines) {
+            // Bỏ qua dấu ▶ nếu có
+            line = line.replace(/^▶\s*/, '').trim();
+
+            // Check for Korean characters (Hangul) to identify Korean lines
+            if (/[(\uAC00-\uD7AF)|(\u1100-\u11FF)|(\u3130-\u318F)]/.test(line)) {
+                koreanLines.push(line);
+                expectKorean = false; // Next line is likely Vietnamese
+            } else if (line.trim()) {
+                // If no Korean characters, assume it's Vietnamese
+                vietnameseLines.push(line);
+                expectKorean = true; // Next line is likely Korean
+            }
+        }
+
+        // Ensure both arrays have the same number of lines, filling with empty strings if necessary
+        const maxLength = Math.max(koreanLines.length, vietnameseLines.length);
+        while (koreanLines.length < maxLength) {
+            koreanLines.push('');
+        }
+        while (vietnameseLines.length < maxLength) {
+            vietnameseLines.push('');
+        }
+
+        // Fill the text areas
+        document.getElementById('koreanText').value = koreanLines.join('\n');
+        document.getElementById('vietnameseText').value = vietnameseLines.join('\n');
+
+        alert(`Đã khôi phục ${koreanLines.filter(x => x).length} câu tiếng Hàn và ${vietnameseLines.filter(x => x).length} câu tiếng Việt từ file TXT!`);
+    }
 </script>
 </body>
 </html>
